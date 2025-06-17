@@ -125,7 +125,8 @@ namespace JuniorSteps.Controllers
                 CurrentPage = page,
                 TotalPages = totalPages
             };
-
+            var latestPost = await _context.Posts.OrderByDescending(p=>p.Created).FirstOrDefaultAsync();    
+            ViewBag.FirstPostId = latestPost?.Id ?? 1;
             return View(viewModel);
         }
 
