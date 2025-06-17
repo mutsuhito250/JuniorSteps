@@ -3,13 +3,18 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var dbUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+if (!string.IsNullOrEmpty(dbUrl))
+{
+    builder.Configuration["ConnectionStrings:DefaultConnection"] = dbUrl;
+}
 // Services
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddSession();
 builder.Services.AddScoped<SimpleAuthFilter>();
-builder.Services.AddRazorPages(); // ✅ Razor Pages servisi
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -32,10 +37,8 @@ app.UseRouting();
 app.UseSession();
 app.UseAuthorization();
 
-// ✅ Razor Pages route'ları
 app.MapRazorPages();
 
-// MVC route'ları
 app.MapControllerRoute(
     name: "customPosts",
     pattern: "all-posts",
