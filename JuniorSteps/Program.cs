@@ -3,15 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var dbUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
-if (!string.IsNullOrEmpty(dbUrl))
-{
-    builder.Configuration["ConnectionStrings:DefaultConnection"] = dbUrl;
-}
 // Services
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration["DefaultConnection"]));
 builder.Services.AddSession();
 builder.Services.AddScoped<SimpleAuthFilter>();
 builder.Services.AddRazorPages();
