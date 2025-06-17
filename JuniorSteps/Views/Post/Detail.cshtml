@@ -1,0 +1,206 @@
+﻿@model JuniorSteps.Models.Post
+
+<!-- Blog -->
+<div class="mt-5">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-8 mb-5">
+                <!-- featured Details -->
+                <section class="section" id="featured">
+                    <div class="detail">
+                        <img src="@Url.Content(Model.ImagePath)" style="width:100%; max-height:450px; object-fit:cover;" alt="..." />
+
+
+                        <div class="post-cat mt-5">
+                            <a href="#" class="btn">@Model.Category.Name</a>
+                            
+                            <div class="meta mt-3 ">
+
+                                <a asp-page="/About" class="profile" >
+                                    <i class="fas fa-user ml-2"></i>
+                                    <span>Mahammad</span>
+                                </a> -
+                                <span>@Model.Created.ToString("dd MMM yyyy")</span>
+
+                            </div>
+                        </div>
+                        <div class="article mt-3">
+                            <h1>@Model.Title</h1>
+                            <p class="mt-3">
+                                @Html.Raw(@Model.Content)
+                            </p>
+
+
+                        </div>
+                    </div>
+@* 
+                    <div class="comment mt-5 p-5">
+                        <h3>Get Comment!</h3>
+                        <form class="mt-4" action="" method="post">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" placeholder="Full name"
+                                           aria-label="Full name">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="email" class="form-control" placeholder="Email address"
+                                           aria-label="Email address">
+                                </div>
+                            </div>
+                            <div class="mt-3 mb-3">
+                                <textarea class="form-control" placeholder="Comment area"
+                                          id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Post comment</button>
+                        </form>
+                    </div>
+
+                    <div class="comment-area mt-5">
+                        <!-- Comment Area Start -->
+                        <div class="comment_area clearfix mt-70">
+                            <ul>
+                                <!-- Single Comment Area -->
+                                <li class="single_comment_area">
+                                    <!-- Comment Content -->
+                                    <div class="comment-content">
+                                        <!-- Comment Meta -->
+                                        <div class="comment-meta d-flex align-items-center justify-content-between">
+                                            <p>
+                                                <i class="fas fa-user pr-2"></i> <a class="profile" href="#">
+                                                    Darisset
+                                                </a> - <span href="#" class="post-date">
+                                                    Sep 29, 2020 at
+                                                    9:48
+                                                    am
+                                                </span>
+                                            </p>
+                                            <a href="#" class="comment-reply btn world-btn">Reply</a>
+                                        </div>
+                                        <p>
+                                            Pick the yellow peach that looks like a sunset with its red, orange, and
+                                            pink coat skin, peel it off with your teeth. Sink them into unripened...
+                                        </p>
+                                    </div>
+                                    <ul class="children">
+                                        <li class="single_comment_area">
+                                            <!-- Comment Content -->
+                                            <div class="comment-content">
+                                                <!-- Comment Meta -->
+                                                <div class="comment-meta d-flex align-items-center justify-content-between">
+                                                    <p>
+                                                        <i class="fas fa-user pr-2"></i> <a class="profile"
+                                                                                            href="#">
+                                                            Danang Haris
+                                                        </a> - <span href="#" class="post-date">
+                                                            Sep
+                                                            29,
+                                                            2020 at
+                                                            9:48
+                                                            am
+                                                        </span>
+                                                    </p>
+                                                    <a href="#" class="comment-reply btn world-btn">Reply</a>
+                                                </div>
+                                                <p>
+                                                    Pick the yellow peach that looks like a sunset with its red,
+                                                    orange, and pink coat skin, peel it off with your teeth. Sink
+                                                    them into unripened...
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- Single Comment Area -->
+                                <li class="single_comment_area">
+                                    <!-- Comment Content -->
+                                    <div class="comment-content">
+                                        <!-- Comment Meta -->
+                                        <div class="comment-meta d-flex align-items-center justify-content-between">
+                                            <p>
+                                                <i class="fas fa-user pr-2"></i> <a class="profile" href="#">
+                                                    Sherlock Holmes
+                                                </a> - <span href="#" class="post-date">
+                                                    Sep 29,
+                                                    2020 at
+                                                    9:48
+                                                    am
+                                                </span>
+                                            </p>
+                                            <a href="#" class="comment-reply btn world-btn">Reply</a>
+                                        </div>
+                                        <p>
+                                            Pick the yellow peach that looks like a sunset with its red, orange, and
+                                            pink coat skin, peel it off with your teeth. Sink them into unripened...
+                                        </p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div> *@
+                </section>
+                <!-- end of featured Detail -->
+            </div>
+
+            <div class="col-lg-4">
+
+
+                <!-- single card -->
+                <article class="sidebar-left">
+                    <!-- img container -->
+                    <div class="service-img-container">
+                        <!-- img -->
+                        <img src="@Url.Content("~/uploads/MyPhoto.jpg")" alt="..." class="..." />
+
+                        <!-- service icon -->
+                        <span class="service-icon">
+                            <i class="fas fa-user fa-fw"></i>
+                        </span>
+                    </div>
+                    <!-- service info -->
+                    <div class="service-info">
+                        <h4>Mahammad Ismayilov</h4>
+                        <p>
+                            I'm Mahammad Ismayilov, a junior software developer with a strong foundation in C#, .NET, and modern web technologies...
+                        </p>
+                        <a asp-page="/About" class="btn service-btn">read more</a>
+
+                    </div>
+                </article>
+                <!--end of  single card -->
+
+                <div class="sidebar-left">
+                    <h4 class="text-center">Follow Me</h4>
+                    <div class="underline"></div>
+                    <ul class="social-icons text-center">
+                        <!-- single item -->
+                        <!-- end of single item -->
+                        <!-- single item -->
+                        <!-- end of single item -->
+                        <!-- single item -->
+                        <!-- end of single item -->
+                        <!-- single item -->
+                        <li>
+                            <a href="https://www.linkedin.com/in/ismayilovm/" class="social-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <!-- end of single item -->
+                        <!-- single item -->
+                        <li>
+                            <a href="https://www.instagram.com/maqa_ismayiloff2255/" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <!-- end of single item -->
+                    </ul>
+                </div>
+
+              
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end blog -->

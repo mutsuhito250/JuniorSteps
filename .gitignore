@@ -1,0 +1,14 @@
+.vs/
+*.user
+*.suo
+*.vspscc
+*.vssscc
+*.exe
+*.dll
+*.pdb
+*.db
+bin/
+obj/
+*.log
+*.DS_Store
+*.sqlite

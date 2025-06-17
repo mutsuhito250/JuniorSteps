@@ -1,0 +1,702 @@
+﻿@model JuniorSteps.ViewModels.PostIndexViewModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+
+<body>
+
+  
+    <aside class="sidebar" id="sidebar">
+        <div>
+            <button id="close-btn" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="sidebar-links">
+                <li><a asp-controller="Post" asp-action="Index">Blogs</a></li>
+                <li><a asp-page="/About">About</a></li>
+               
+            </ul>
+            <ul class="social-icons">
+                <!-- single item -->
+                <li class="pr-3">
+                    <a href="https://www.twitter.com" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <!-- end of single item -->
+                <!-- single item -->
+                <li>
+                    <a href="https://www.twitter.com" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <!-- end of single item -->
+                <!-- single item -->
+                <li>
+                    <a href="https://www.twitter.com" class="social-icon">
+                        <i class="fab fa-squarespace"></i>
+                    </a>
+                </li>
+                <!-- end of single item -->
+                <!-- single item -->
+                <li>
+                    <a href="https://www.twitter.com" class="social-icon">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                </li>
+                <!-- end of single item -->
+                <!-- single item -->
+                <li>
+                    <a href="https://www.twitter.com" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <!-- end of single item -->
+            </ul>
+        </div>
+    </aside>
+    <!-- end of sidebar -->
+    <!-- Banner -->
+    <div class="banner">
+        <div class="container">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <section>
+                            <div class="section-center clearfix">
+                                <!-- banner-img -->
+                                <article class="banner-img">
+                                    <div class="banner-picture-container">
+                                        <img src="@Url.Content("~/img/blogg1.jpg")" alt="...">
+
+                                    </div>
+                                </article>
+                                <!-- banner-info -->
+                                <article class="banner-info">
+                                    <!-- section title -->
+                                    <div class="">
+                                        <h3>Welcome to My Tech Journal</h3>
+                                    </div>
+                                    <!-- end of section title -->
+                                    <p class="banner-text">
+                                        Sharing my journey through .NET, C#, and modern web development.
+                                        I build things with code — backend in .NET, frontend in React — and share what I learn here.
+                                    </p>
+
+                                    <a href="/Post/Detail/16" class="btn btn-primary">Start Reading</a>
+
+                                </article>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="carousel-item">
+                        <section>
+                            <div class="section-center clearfix">
+                                <!-- banner-img -->
+                                <article class="banner-img">
+                                    <div class="banner-picture-container">
+                                        <img src="@Url.Content("~/img/blogg2.jpg")" alt="...">
+
+                                    </div>
+                                </article>
+                                <!-- banner-info -->
+                                <article class="banner-info">
+                                    <!-- section title -->
+                                    <div class="">
+                                        <h3>Check Out My GitHub<h3>
+                                    </div>
+                                    <!-- end of section title -->
+                                    <p class="banner-text">
+                                        I share projects, experiments, and open-source code on GitHub.
+                                        Feel free to explore or fork something useful.
+                                    </p>
+
+                                    <a href="https://github.com/Mahammad2346" class="btn btn-primary">Visit GitHub</a>
+                                </article>
+                            </div>
+                        </section>
+                    </div>
+                   
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- end banner -->
+    <!-- popular post -->
+
+
+    @* <div class="popular-post">
+        <div class="container">
+            <!-- popular post -->
+            <section class="section projects">
+                <!-- section title -->
+                <div class="section-title">
+                    <h2>Popular Posts</h2>
+                    <div class="underline"></div>
+                </div>
+                <!-- end of section title -->
+                <div class="section-center projects-center">
+                    <!-- single post -->
+                    <a href="detail.html" class="project-1">
+                        <article class="project">
+                            <img src="./img/blog1.jpg" alt="" class="project-img" />
+                            <div class="project-info">
+                                <h4>How to learning python?</h4>
+                                <p>Python</p>
+                            </div>
+                        </article>
+                    </a>
+                    <!-- end of single post -->
+                    <!-- single post -->
+                    <a href="detail.html" class="project-2">
+                        <article class="project">
+                            <img src="./img/blog2.jpg" alt="" class="project-img" />
+                            <div class="project-info">
+                                <h4>Nothing is impossible</h4>
+                                <p>Journal</p>
+                            </div>
+                        </article>
+                    </a>
+                    <!-- end of single post -->
+                    <!-- single post -->
+                    <a href="detail.html" class="project-3">
+                        <article class="project">
+                            <img src="./img/slide1.jpg" alt="" class="project-img" />
+                            <div class="project-info">
+                                <h4>Lorem ipsum dolor sit.</h4>
+                                <p>Life Style</p>
+                            </div>
+                        </article>
+                    </a>
+                    <!-- end of single project -->
+                    <!-- single project -->
+                    <a href="detail.html" class="project-4">
+                        <article class="project">
+                            <img src="./img/blog3.jpg" alt="" class="project-img" />
+                            <div class="project-info">
+                                <h4>Lorem ipsum dolor sit.</h4>
+                                <p>Education</p>
+                            </div>
+                        </article>
+                    </a>
+                    <!-- end of single project -->
+                </div>
+            </section>
+            <!-- endo of projects -->
+        </div>
+    </div> *@
+
+
+
+
+
+    <!-- popular post -->
+    <!-- Categori list -->
+
+
+    @* <div class="categori-list">
+        <div class="container">
+            <section class="section bg-grey">
+                <div class="section-title mt-5">
+                    <h2>Categories</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="section-center services-center">
+                    <!-- single  service category-->
+                    <article class="service">
+                        <a href="category.html">
+                            <i class="fas fa-journal-whills ser-icon"></i>
+                            <h4>Joural</h4>
+                            <div class="underline"></div>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique
+                                at repellendus eius omnis asperiores laborum reprehenderit quis
+                                pariatur quidem placeat.
+                            </p>
+                        </a>
+                    </article>
+                    <!-- end of single service category -->
+                    <!-- single  service category -->
+                    <article class="service">
+                        <a href="category.html">
+                            <!-- fa -->
+                            <i class="fa fa-heart ser-icon" aria-hidden="true"></i>
+                            <h4>Life Style</h4>
+                            <div class="underline"></div>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique
+                                at repellendus eius omnis asperiores laborum reprehenderit quis
+                                pariatur quidem placeat.
+                            </p>
+                        </a>
+                    </article>
+                    <!-- end of single service category -->
+                    <!-- single  service category -->
+                    <article class="service">
+                        <a href="category.html">
+                            <!-- fab -->
+                            <i class="fa fa-graduation-cap ser-icon"></i>
+                            <h4> Education</h4>
+                            <div class="underline"></div>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique
+                                at repellendus eius omnis asperiores laborum reprehenderit quis
+                                pariatur quidem placeat.
+                            </p>
+                        </a>
+                    </article>
+                    <!-- end of single service category -->
+                </div>
+
+
+            </section>
+            <!-- end of services category -->
+        </div>
+    </div> *@
+
+
+
+
+    <!-- end categori list -->
+    <!-- Blog -->
+
+
+@*     <div class="blog">
+        <div class="container ">
+            <div class="row">
+                <div class="section-title mt-5">
+                    <h2>All Post</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class=" mb-5">
+                    <!-- featured blogs -->
+                    <section class="section" id="featured">
+                        <!-- featured-center -->
+                        <div class="section-center featured-center ">
+                            <div class="row justify-content-start">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="col-lg-6">
+                                        <!-- single blog -->
+                                        <article class="blog-card">
+                                            <div class="blog-img-container">
+                                                <img src="@item.ImagePath" class="blog-img img-fluid" />
+
+
+
+                                                <p class="blog-date">@item.Created.ToString("dd MMM yyyy")</p>
+
+                                            </div>
+                                            <!-- blog info -->
+                                            <div class="blog-info">
+                                                <div class="blog-title">
+                                                    <a href="detail.html">
+                                                        <h4>@item.Title</h4>
+                                                    </a>
+                                                    <a href="category.html">
+                                                        <p>@item.Category?.Name</p>
+                                                    </a>
+                                                </div>
+                                                <p>
+                                                    @item.Description
+                                                </p>
+                                                <!-- blog footer -->
+                                                <div class="blog-footer">
+                                                    <a href="">
+                                                        <p>
+                                                            <span><i class="fas fa-user"></i></span> Darisset
+                                                        </p>
+                                                    </a>
+                                                    <a href="detail.html">
+                                                        <p>Read More...</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- end of single blog -->
+                                    </div>
+                                }
+                               
+
+                            </div>
+                        </div>
+                        <!-- end of blogs center -->
+                        <div class="blog-btn mt-5">
+                            <a href="blog.html" class="btn">all post</a>
+                        </div>
+                    </section>
+                    <!-- end of featured blogs -->
+                </div>
+            </div>
+        </div>
+    </div> *@
+
+
+
+    <!-- end blog -->
+@* 
+    <div class="container mb-5">
+        <div class="section-title mt-5">
+            <h2>Recent Posts</h2>
+            <div class="underline"></div>
+        </div>
+        <section class="section" id="featured">
+            <!-- featured-center -->
+            <div class="section-center featured-center ">
+                <div class="row justify-content-start">
+                    <div class="col-lg-6">
+                        <!-- single blog -->
+                        <article class="blog-card">
+                            <!-- blog info -->
+                            <div class="blog-info">
+                                <div class="blog-title">
+                                    <a href="detail.html">
+                                        <h4>Tibet Lorem ?</h4>
+                                    </a>
+                                    <a href="category.html">
+                                        <p>Education</p>
+                                    </a>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+                                    vitae tempore voluptatum maxime reprehenderit eum quod
+                                    exercitationem fugit, qui corporis.
+                                </p>
+                                <!-- blog footer -->
+                                <div class="blog-footer">
+                                    <a href="">
+                                        <p>
+                                            <span><i class="fas fa-user"></i></span> Darisset
+                                        </p>
+                                    </a>
+                                    <a href="detail.html">
+                                        <p>Read More...</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- end of single blog -->
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- single blog -->
+                        <article class="blog-card">
+                            <!-- blog info -->
+                            <div class="blog-info">
+                                <div class="blog-title">
+                                    <a href="detail.html">
+                                        <h4>Tibet Adventure</h4>
+                                    </a>
+                                    <a href="category.html">
+                                        <p>Life Style</p>
+                                    </a>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+                                    vitae tempore voluptatum maxime reprehenderit eum quod
+                                    exercitationem fugit, qui corporis.
+                                </p>
+                                <!-- blog footer -->
+                                <div class="blog-footer">
+                                    <a href="">
+                                        <p>
+                                            <span><i class="fas fa-user"></i></span> Darisset
+                                        </p>
+                                    </a>
+                                    <a href="detail.html">
+                                        <p>Read More...</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- end of single blog -->
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- single blog -->
+                        <article class="blog-card">
+                            <!-- blog info -->
+                            <div class="blog-info">
+                                <div class="blog-title">
+                                    <a href="detail.html">
+                                        <h4>Tibet Adventure</h4>
+                                    </a>
+                                    <a href="category.html">
+                                        <p>Journal</p>
+                                    </a>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+                                    vitae tempore voluptatum maxime reprehenderit eum quod
+                                    exercitationem fugit, qui corporis.
+                                </p>
+                                <!-- blog footer -->
+                                <div class="blog-footer">
+                                    <a href="">
+                                        <p>
+                                            <span><i class="fas fa-user"></i></span> Darisset
+                                        </p>
+                                    </a>
+                                    <a href="detail.html">
+                                        <p>Read More...</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- end of single blog detail-->
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- single blog -->
+                        <article class="blog-card">
+                            <!-- blog detail info -->
+                            <div class="blog-info">
+                                <div class="blog-title">
+                                    <a href="detail.html">
+                                        <h4>Tibet Adventure</h4>
+                                    </a>
+                                    <a href="category.html">
+                                        <p>Journal</p>
+                                    </a>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+                                    vitae tempore voluptatum maxime reprehenderit eum quod
+                                    exercitationem fugit, qui corporis.
+                                </p>
+                                <!-- detail footer -->
+                                <div class="blog-footer">
+                                    <a href="">
+                                        <p>
+                                            <span><i class="fas fa-user"></i></span> Darisset
+                                        </p>
+                                    </a>
+                                    <a href="detail.html">
+                                        <p>Read More...</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- end of single detail -->
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div> *@
+
+
+    <!-- newsletter -->
+ @*    <section class="section newsletter" id="newsletter">
+        <div class="container section-center newsletter-center">
+            <div class="newsletter-title">
+                <h3>want latest post info and updates?</h3>
+                <p>Sign up for newsletter and stay up to date</p>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" class="form-control" placeholder="your email" />
+                <button type="submit" class="btn-submit">submit</button>
+            </form>
+        </div>
+    </section> *@
+    <!-- end of newsletter -->
+    <!-- Blog -->
+    <div class="">
+        <div class="container ">
+            <div class="row">
+                <div class="section-title mt-5">
+                    <h2>All Posts</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="col-lg-8 mb-5">
+                    <!-- featured blogs -->
+                    <section class="section" id="featured">
+                        <!-- featured-center -->
+                        <div class="section-center featured-center ">
+                            @if(Model.Posts.Count == 0 )
+                            {
+                                <div class="alert alert-warning mt-4">
+                                    <h4>OOPS... Blog not found</h4>
+                                    <a href="@Url.Action("Index", "Post")" class="btn btn-primary mt-2">All Blogs</a>
+                                </div>
+                            }
+                            else{
+                                <div class="row justify-content-start">
+                                    @foreach (var item in Model.Posts)
+                                    {
+                                        <div class="col-lg-6">
+                                            <!-- single blog -->
+                                            <article class="blog-card w-100">
+                                                <div class="blog-img-container">
+                                                    <img src="@item.ImagePath" class="blog-img img-fluid" />
+                                                    <p class="blog-date">@item.Created.ToString("dd MMM yyyy")</p>
+                                                </div>
+                                                <!-- blog info -->
+                                                <!-- blog info -->
+                                                <div class="blog-info">
+                                                    <div class="blog-title">
+                                                        <a href="@Url.Action("Detail", "Post", new { id = item.Id })">
+                                                            <h4>@item.Title</h4>
+                                                        </a>
+                                                      
+                                                        <a href="#">
+                                                            <p>@item.Category.Name</p>
+                                                        </a>
+                                                    </div>
+                                                    <p>
+                                                        @item.Description
+                                                    </p>
+                                                    <!-- blog footer -->
+                                                    <div class="blog-footer">
+                                                       @*  <a href="">
+                                                            <p>
+                                                                <span><i class="fas fa-user"></i></span> 
+                                                            </p>
+                                                        </a> *@
+                                                        <div class="blog-readmore">
+                                                            <a href="@Url.Action("Detail", "Post", new { id = item.Id })">
+                                                                <p>Read More...</p>
+                                                            </a>
+                                                        </div>
+                                                      @*   <a href="#">
+                                                            <a href="@Url.Action("Detail", "Post", new { id = item.Id })">
+                                                                <p>Read More...</p>
+                                                            </a>
+                                                        </a> *@
+                                                    </div>
+                                                </div>
+                                            </article>
+                                            <!-- end of single blog -->
+                                        </div>
+                                    }
+
+
+                                </div>
+                            }
+                        </div>
+                        <!-- end of blogs center -->
+                        <div class="blog-btn mt-5">
+                            <nav aria-label="Page navigation example" class="mt-4">
+                                <ul class="pagination">
+                                    @for (int i = 1; i <= Model.TotalPages; i++)
+                                    {
+                                        <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                                            <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                                        </li>
+                                    }
+                                </ul>
+                            </nav>
+                        </div>
+                    </section>
+                    <!-- end of featured blogs -->
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="sidebar-left">
+                        <form class="d-flex" method="get" action="@Url.Action("Index", "Post")">
+                            <input class="form-control mr-2" type="search" name="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+
+                    <article class="sidebar-left">
+                        <h4 class="text-center">Categories</h4>
+                        <div class="underline"></div>
+                        <ul class="list-group">
+                            @foreach (var item in Model.CategoryCounts)
+                            {
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <a href="@Url.Action("Index", "Post", new { category = item.CategoryName })">@item.CategoryName</a>
+                                    <span class="badge bg-primary rounded-pill">@item.PostCount</span>
+                                </li>
+                            }
+
+                        </ul>
+                    </article>
+
+
+                    <!-- single card -->
+                    <article class="sidebar-left">
+                        <!-- img container -->
+                        <div class="service-img-container">
+                            <!-- img -->
+                            <img src="@Url.Content("~/uploads/MyPhoto.jpg")" alt="..." class="..." />
+
+                            <!-- service icon -->
+                            <span class="service-icon">
+                                <i class="fas fa-user fa-fw"></i>
+                            </span>
+                        </div>
+                        <!-- service info -->
+                        <div class="service-info">
+                            <h4>Mahammad Ismayilov</h4>
+                            <p>
+                                I'm Mahammad Ismayilov, a junior software developer with a strong foundation in C#, .NET, and modern web technologies...
+                            </p>
+                            <a asp-page="/About" class="btn service-btn">read more</a>
+
+                        </div>
+                    </article>
+                    <!--end of  single card -->
+
+                    <div class="sidebar-left">
+                        <h4 class="text-center">Follow Me</h4>
+                        <div class="underline"></div>
+                        <ul class="social-icons text-center" >
+                            <!-- single item -->
+                        
+                            <!-- end of single item -->
+                            <!-- single item -->
+                           
+                            <!-- end of single item -->
+                            <!-- single item -->
+                          
+                            <!-- end of single item -->
+                            <!-- single item -->
+                            <li>
+                                <a href="https://www.linkedin.com/in/ismayilovm/" class="social-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <!-- end of single item -->
+                            <!-- single item -->
+                            <li>
+                                <a href="https://www.instagram.com/maqa_ismayiloff2255/" class="social-icon">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <!-- end of single item -->
+                        </ul>
+                    </div>
+
+
+                   
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+  
+
+    <!-- end blog -->
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,51 @@
+﻿@model List<JuniorSteps.Models.Post>
+
+<h2>Manage Posts</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Created</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var post in Model)
+        {
+                <tr>
+                    <td>@post.Title</td>
+                    <td>@post.Category.Name</td>
+                    <td>@post.Created.ToString("dd MMM yyyy")</td>
+                    <td>
+                        <a href="/Post/Edit/@post.Id" class="btn btn-warning btn-sm">Edit</a>
+                           <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", "Post", new { id = post.Id })">Delete</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+<h3>All Categories</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in ViewBag.Categories as List<JuniorSteps.Models.Category>)
+        {
+            <tr>
+                <td>@category.Name</td>
+                <td>
+                    <form asp-controller="Category" asp-action="Delete" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@category.Id" />
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

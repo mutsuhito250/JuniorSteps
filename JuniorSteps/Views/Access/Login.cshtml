@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Admin Login";
+}
+
+<form method="post">
+    <input type="password" name="password" placeholder="Enter password" class="form-control" />
+    <button type="submit" class="btn btn-primary mt-2">Login</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+        <div class="text-danger mt-2">@ViewBag.Error</div>
+}

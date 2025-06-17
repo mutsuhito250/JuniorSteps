@@ -1,0 +1,50 @@
+﻿@page
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "About";
+}
+
+
+<div class="blog pb-5">
+    <div class="container">
+        <!-- about -->
+        <section class="section-user">
+            <div class="section-center user-center user-img-container">
+                <!-- user img -->
+                <article class="user-img">
+                    <img src="@Url.Content("~/img/MyPhoto.jpg")" class="my-photo" alt="...">
+                </article>
+                <!-- user info -->
+                <article class="user-info">
+                    <!-- section title -->
+                    <div class="section-title user-title">
+                        <h2>About me</h2>
+                        <div class="underline"></div>
+                    </div>
+                    <!-- section title -->
+                    <!-- lorem 40 -->
+                    <p>
+                        I'm Mahammad Ismayilov, a junior software developer with a strong foundation in C#, .NET, and modern web technologies.
+                        I recently completed a full-stack development bootcamp and am currently looking for internship or junior-level opportunities in software or IT.
+                        I enjoy building practical applications, writing clean code, and learning new tools every day.
+                    </p>
+
+                    <p>
+                        Beyond coding, I also like sharing what I learn through personal blog posts and small projects.
+                        If you'd like to check out my CV, feel free to download it using the button below.
+                    </p>
+
+                    <p>Thank you for visiting — have a great day!</p>
+
+                    <a href="~/files/MahammadCV.pdf" download class="btn btn-primary mt-3">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+
+                        
+                </article>
+            </div>
+        </section>
+        <!-- end of about about -->
+    </div>
+</div>
+
