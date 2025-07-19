@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Services
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -13,7 +12,6 @@ builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
-// Middleware
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

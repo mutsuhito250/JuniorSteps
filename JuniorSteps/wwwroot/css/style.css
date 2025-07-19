@@ -817,6 +817,13 @@ Featured Blogs
     }
 }
 
+@media (max-width: 768px) {
+    .blog-card {
+        margin-bottom: 3.5rem;
+    }
+}
+
+
 /*
 =============== 
 Services
